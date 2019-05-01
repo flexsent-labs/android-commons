@@ -1,0 +1,53 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-platform-android'
+apply plugin: 'kotlin-kapt'
+
+repositories {
+    maven { url 'https://github.com/WickeDev/stetho-realm/raw/master/maven-repo' }
+}
+
+android {
+    compileSdkVersion sdkCompileVersion
+
+    defaultConfig {
+        minSdkVersion sdkMinVersion
+        targetSdkVersion sdkTargetVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':extensions')
+
+    implementation otherDeps.kotlin
+    implementation otherDeps.appcompat
+    implementation otherDeps.materialDesign
+    implementation otherDeps.timber
+
+    implementation kodeinDeps.generic
+    implementation kodeinDeps.androidx
+    implementation kodeinDeps.confJvm
+
+    implementation rxDeps.core
+    implementation rxDeps.android
+    implementation rxDeps.preferences
+
+    implementation uberDeps.autodispose
+    implementation uberDeps.autodisposeAndroid
+    implementation uberDeps.autodisposeAndroidArchcomponents
+
+}
