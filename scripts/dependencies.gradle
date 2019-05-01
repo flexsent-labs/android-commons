@@ -1,0 +1,338 @@
+ext {
+    kotlinVersion = '1.3.30'
+    gradlePluginVersion = '3.4.0'
+
+    sdkMinVersion = 19
+    sdkTargetVersion = 28
+    sdkCompileVersion = 28
+
+    buildToolsAllVersion = '28.0.3'
+    supportLibraryVersion = '28.0.0'
+    supportLibraryNextReleaseVersion = '28.0.0-rc02'
+
+    lifecycleVersion = '2.0.0'
+    roomVersion = '2.0.0'
+    pagingVersion = '2.0.0'
+    coreTestingVersion = '2.0.0'
+
+    constraintLayoutVersion = '1.1.3'
+    navigationVersion = "1.0.0-alpha08"
+    appcompatVersion = '1.1.0-alpha04'
+    appcompatLegacyVersion = '1.0.0-rc01'
+    materialDesignVersion = '1.1.0-alpha02'
+
+    rxLifecycleVersion = '2.2.2'
+
+    retrofitVersion = '2.3.0'
+    stethoVersion = '1.5.1'
+    okHttp3Version = '3.14.1'
+    okHttpVersion = '2.7.5'
+    jacksonVersion = '2.8.8'
+    kodeinVersion = '5.3.0'
+    crashlyticsVesrion = '2.9.5'
+    grpcVersion = '1.14.0'
+    timberVersion = '4.7.0'
+    ankoVersion = '0.10.8'
+    rxPermissionsVersion = '0.9.5'
+    audioVisualizerVersion = '2.0.1'
+    exoPlayerVersion = '2.8.4'
+    debugDrawerVersion = '0.8.0'
+    jacocoVersion = '0.8.3'
+    zxingVersion = '3.6.0'
+
+    securedPreferenceVersion = '0.7.4'
+
+    autodisposeVersion = '1.1.0'
+
+    mockitoVersion = '2.22.0'
+    mockitoKotlinVersion = '1.6.0'
+
+    espressoVersion = '3.1.1'
+    supportTestVersion = '1.1.0'
+    kakaoVersion = '1.4.0-androidx'
+    awaitilityVersion = '3.1.5'
+    fakerVersion = '0.16'
+
+    gradlePluginDeps = [
+            build         : "com.android.tools.build:gradle:$gradlePluginVersion",
+            kotlin        : "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion",
+            navSageArgs   : "android.arch.navigation:navigation-safe-args-gradle-plugin:$navigationVersion",
+            googleServices: 'com.google.gms:google-services:4.0.1',
+            // https://docs.fabric.io/android/changelog.html#fabric-gradle-plugin
+            fabric        : 'io.fabric.tools:gradle:1.26.1',
+            // https://github.com/Triple-T/gradle-play-publisher
+            playPublisher : 'com.github.triplet.gradle:play-publisher:1.2.2',
+            jacoco        : "org.jacoco:org.jacoco.core:$jacocoVersion",
+            realm         : "io.realm:realm-gradle-plugin:5.4.1",
+
+    ]
+
+    annotationProcessors = [
+            lifecycle: "androidx.lifecycle:lifecycle-compiler:$lifecycleVersion",
+            room     : "androidx.room:room-compiler:$roomVersion"
+    ]
+
+    security = [
+            binaryPrefs: "com.github.ajdevy:Secured-Preference-Store:bugfix~keystore_exception-SNAPSHOT",
+    ]
+
+    rxDeps = [
+            // https://github.com/ReactiveX/RxJava
+            core                           : "io.reactivex.rxjava2:rxjava:2.2.2",
+
+            // https://github.com/ReactiveX/RxAndroid
+            android                        : "io.reactivex.rxjava2:rxandroid:2.1.0",
+
+            // https://github.com/trello/RxLifecycle
+            lifecycle                      : "com.trello.rxlifecycle2:rxlifecycle:$rxLifecycleVersion",
+            lifecycleAndroid               : "com.trello.rxlifecycle2:rxlifecycle-android:$rxLifecycleVersion",
+            lifecycleComponents            : "com.trello.rxlifecycle2:rxlifecycle-components:$rxLifecycleVersion",
+            lifecycleKotlin                : "com.trello.rxlifecycle2:rxlifecycle-kotlin:$rxLifecycleVersion",
+            lifecycleAndroidLifecycleKotlin: "com.trello.rxlifecycle2:rxlifecycle-android-lifecycle-kotlin:$rxLifecycleVersion",
+
+            // https://github.com/f2prateek/rx-preferences
+            preferences                    : 'com.f2prateek.rx.preferences2:rx-preferences:2.0.0',
+
+            // https://github.com/JakeWharton/RxBinding
+            recyclerView                   : 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7-kotlin:2.1.1',
+
+            //https://github.com/ReactiveX/RxKotlin
+            kotlin                         : 'io.reactivex.rxjava2:rxkotlin:2.2.0',
+    ]
+
+    firebaseDeps = [
+            // https://firebase.google.com/support/release-notes/android#latest_sdk_versions
+            core       : 'com.google.firebase:firebase-core:16.0.3',
+            messaging  : 'com.google.firebase:firebase-messaging:17.3.0',
+            config     : 'com.google.firebase:firebase-config:16.0.0',
+
+            //https://fabric.io/kits/android/crashlytics/update
+            crashlytics: "com.crashlytics.sdk.android:crashlytics:$crashlyticsVesrion",
+    ]
+
+    // https://github.com/FasterXML/jackson/blob/master/README.md
+    jacksonDeps = [
+            core         : "com.fasterxml.jackson.core:jackson-core:$jacksonVersion",
+            annotations  : "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion",
+            databinding  : "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion",
+            joda         : "com.fasterxml.jackson.datatype:jackson-datatype-joda:$jacksonVersion",
+            jacksonKotlin: "com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion"
+    ]
+
+    // https://github.com/grpc/grpc/releases
+    grpcDeps = [
+            okhttp      : "io.grpc:grpc-okhttp:$grpcVersion",
+            android     : "io.grpc:grpc-android:$grpcVersion",
+            protobufLite: "io.grpc:grpc-protobuf-lite:$grpcVersion",
+            stub        : "io.grpc:grpc-stub:$grpcVersion",
+            jsr250      : 'javax.annotation:jsr250-api:1.0'
+    ]
+
+    // https://github.com/square/retrofit
+    retrofitDeps = [
+            core     : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            jackson  : "com.squareup.retrofit2:converter-jackson:$retrofitVersion",
+            gson     : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            scalars  : "com.squareup.retrofit2:converter-scalars:$retrofitVersion",
+            rxAdapter: "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+    ]
+
+    // https://github.com/Kodein-Framework/Kodein-DI
+    kodeinDeps = [
+            generic : "org.kodein.di:kodein-di-generic-jvm:$kodeinVersion",
+            androidx: "org.kodein.di:kodein-di-framework-android-x:$kodeinVersion",
+            confJvm : "org.kodein.di:kodein-di-conf-jvm:$kodeinVersion"
+    ]
+
+    debugDrawerDeps = [
+            // https://github.com/palaima/DebugDrawer
+            core   : "io.palaima.debugdrawer:debugdrawer:$debugDrawerVersion",
+            actions: "io.palaima.debugdrawer:debugdrawer-actions:$debugDrawerVersion"
+    ]
+
+    realmDeps = [
+            // https://github.com/palaima/DebugDrawer
+            core   : "io.palaima.debugdrawer:debugdrawer:$debugDrawerVersion",
+            actions: "io.palaima.debugdrawer:debugdrawer-actions:$debugDrawerVersion"
+    ]
+
+    archDeps = [
+            // https://mvnrepository.com/artifact/androidx.room/room-runtime
+            roomRuntime          : "androidx.room:room-runtime:$roomVersion",
+            roomRx               : "androidx.room:room-rxjava2:$roomVersion",
+
+            // https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-extensions
+            lifecycle            : "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion",
+            lifecycleRx          : "androidx.lifecycle:lifecycle-reactivestreams:$lifecycleVersion",
+
+            // https://mvnrepository.com/artifact/androidx.paging/paging-runtime
+            paging               : "androidx.paging:paging-runtime:$pagingVersion",
+
+            // https://mvnrepository.com/artifact/android.arch.navigation/navigation-runtime
+            navigationFragmentKtx: "android.arch.navigation:navigation-fragment-ktx:$navigationVersion",
+            navigationUiKtx      : "android.arch.navigation:navigation-ui-ktx:$navigationVersion",
+    ]
+
+    //https://github.com/Kotlin/anko
+    ankoDeps = [
+            common: "org.jetbrains.anko:anko-commons:$ankoVersion",
+            compat: "org.jetbrains.anko:anko-appcompat-v7:$ankoVersion",
+    ]
+
+    uberDeps = [
+            autodispose                     : "com.uber.autodispose:autodispose-ktx:$autodisposeVersion",
+            autodisposeAndroid              : "com.uber.autodispose:autodispose-android:$autodisposeVersion",
+            autodisposeAndroidArchcomponents: "com.uber.autodispose:autodispose-android-archcomponents-ktx:$autodisposeVersion"
+    ]
+
+    stethoDeps = [
+            core   : "com.facebook.stetho:stetho:$stethoVersion",
+            okhttp : "com.facebook.stetho:stetho-okhttp:$stethoVersion",
+            okhttp3: "com.facebook.stetho:stetho-okhttp3:$stethoVersion",
+            realm  : 'com.uphyca:stetho_realm:2.3.0'
+    ]
+
+
+    okHttpDeps = [
+            // https://github.com/square/okhttp
+            okHttp                   : "com.squareup.okhttp:okhttp:$okHttpVersion",
+            okHttp3                  : "com.squareup.okhttp3:okhttp:$okHttp3Version",
+            okhttp3LoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okHttp3Version",
+            okhttpLoggingInterceptor : "com.squareup.okhttp:logging-interceptor:$okHttpVersion",
+    ]
+
+
+    otherDeps = [
+            // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib
+            kotlin                 : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+
+            // https://mvnrepository.com/artifact/androidx.appcompat/appcompat
+            appcompat              : "androidx.appcompat:appcompat:$appcompatVersion",
+            appcompatLegacy        : "androidx.legacy:legacy-support-v4:$appcompatLegacyVersion",
+            materialDesign         : "com.google.android.material:material:$materialDesignVersion",
+
+            // https://mvnrepository.com/artifact/com.google.android.exoplayer/exoplayer?repo=springio-libs-release
+            exoplayerCore          : "com.google.android.exoplayer:exoplayer-core:$exoPlayerVersion",
+            exoplayerUi            : "com.google.android.exoplayer:exoplayer-ui:$exoPlayerVersion",
+
+            // https://github.com/JakeWharton/timber
+            timber                 : "com.jakewharton.timber:timber:$timberVersion",
+
+            // https://github.com/tbruyelle/RxPermissions
+            rxPermissions          : "com.tbruyelle.rxpermissions2:rxpermissions:$rxPermissionsVersion@aar",
+
+            // https://github.com/dlew/joda-time-android
+            joda                   : 'net.danlew:android.joda:2.9.9.4',
+
+            // https://github.com/instacart/truetime-android/wiki/How-to-use-this-library
+            trueTime               : 'com.github.instacart.truetime-android:library:3.4',
+
+            // https://github.com/square/picasso
+            picasso                : 'com.squareup.picasso:picasso:2.71828',
+
+            // https://mvnrepository.com/artifact/androidx.core/core-ktx
+            coreKtx                : 'androidx.core:core-ktx:1.0.1',
+
+            // https://github.com/wasabeef/picasso-transformations
+            picassoTransformations : 'jp.wasabeef:picasso-transformations:2.2.1',
+
+            // https://github.com/TinkoffCreditSystems/decoro
+            decoro                 : 'ru.tinkoff.decoro:decoro:1.3.4',
+
+            // https://github.com/hbb20/CountryCodePickerProject
+            countryCodePicker      : 'com.hbb20:ccp:2.2.0',
+
+            // https://mvnrepository.com/artifact/androidx.constraintlayout/constraintlayout
+            constraintLayout       : "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+
+            // https://mvnrepository.com/artifact/com.google.android.gms/play-services-location
+            safetynet              : 'com.google.android.gms:play-services-safetynet:15.0.1',
+
+            // https://github.com/saket/Better-Link-Movement-Method
+            beterLinkMovementMethod: 'me.saket:better-link-movement-method:2.2.0',
+
+            // https://developers.google.com/youtube/android/player/
+            // on our nexus: https://nexus.btsd.kz/#browse/browse:shared-jars:youtube%2Fandroid-player-api
+            youtubeAndroidPlayer   : 'youtube:android-player-api:1.2.2',
+
+            salem                  : 'kz.btsdigital.salem:videoeditor:0.0.13',
+            messProtoLite          : 'kz.btsd:messproto-lite:0.0.38',
+            payProtoLite           : 'kz.btsd:pay-proto-lite:0.0.1-20181228.121626-35',
+            uiKit                  : 'kz.btsdigital:uikit:1.0.53',
+            digitalId              : 'kz.btsdigital:digital-id:1.0.0',
+
+            // https://gitlab.btsd.kz/android/common
+            // https://nexus.btsd.kz/#browse/browse:google:kz%2Fbtsdigital%2Fcommon%2Fcore
+            commonCore             : 'kz.btsdigital.common:core:1.0.19',
+
+            // https://gitlab.btsd.kz/android/common-android-test
+            // https://nexus.btsd.kz/#browse/browse:google:kz%2Fbtsdigital%2Fcommon%2Fandroidtest
+            commonAndroidTest      : 'kz.btsdigital.common:androidtest:1.0.6',
+
+            //modified lib from our nexus  based on https://github.com/tylersuehr7/social-text-view TODO move it to UI kit
+            socialTextView         : 'com.nexus:socialtextview:1.2',
+
+            //https://github.com/edubarr/header-decor
+            headerDecor            : 'com.github.edubarr:header-decor:0.2.7',
+            pageIndicatorView      : 'com.romandanylyk:pageindicatorview:1.0.2',
+
+            // https://github.com/journeyapps/zxing-android-embedded
+            zxing                  : "com.journeyapps:zxing-android-embedded:$zxingVersion",
+
+            // https://github.com/RedMadRobot/input-mask-android
+            inputmask              : "com.redmadrobot:inputmask:3.4.4"
+    ]
+
+    // Test dependencies that does not require android runtime.
+    testDeps = [
+            // https://mvnrepository.com/artifact/junit/junit
+            junit          : 'junit:junit:4.12',
+
+            // https://github.com/mockito/mockito
+            mockito        : "org.mockito:mockito-core:$mockitoVersion",
+
+            // https://github.com/nhaarman/mockito-kotlin
+            mockitoKotlin  : "com.nhaarman:mockito-kotlin:$mockitoKotlinVersion",
+
+            // https://mvnrepository.com/artifact/androidx.arch.core/core-testing
+            archCoreTesting: "androidx.arch.core:core-testing:$coreTestingVersion",
+
+            // https://mvnrepository.com/artifact/androidx.room/room-testing
+            archRoomTesting: "androidx.room:room-testing:$roomVersion",
+
+            // https://mockk.io/#verification-atleast-atmost-or-exactly-times
+            mockk          : "io.mockk:mockk:1.8.13.kotlin13"
+    ]
+
+    // Test dependencies that require android runtime.
+    androidTestDeps = [
+            // https://mvnrepository.com/artifact/androidx.test/runner
+            androidTestRunner      : "androidx.test:runner:$supportTestVersion",
+            androidTestRules       : "androidx.test:rules:$supportTestVersion",
+            androidTestOrchestrator: "androidx.test:orchestrator:$supportTestVersion",
+            androidTestExt         : "androidx.test.ext:junit-ktx:1.1.1-alpha04",
+
+            // https://mvnrepository.com/artifact/androidx.test.espresso/espresso-core
+            espressoCore           : "androidx.test.espresso:espresso-core:$espressoVersion",
+            espressoContrib        : "androidx.test.espresso:espresso-contrib:$espressoVersion",
+            espressoIntents        : "androidx.test.espresso:espresso-intents:$espressoVersion",
+
+            // https://github.com/mockito/mockito
+            mockitoAndroid         : "org.mockito:mockito-android:$mockitoVersion",
+
+            // https://mockk.io/#verification-atleast-atmost-or-exactly-times
+            mockkAndroid           : "io.mockk:mockk-android:1.8.13.kotlin13",
+
+            // https://github.com/awaitility
+            awaitility             : "org.awaitility:awaitility-kotlin:$awaitilityVersion",
+
+            // https://github.com/agoda-com/Kakao
+            kakao                  : "com.agoda.kakao:kakao:$kakaoVersion",
+
+            // https://github.com/DiUS/java-faker
+            faker                  : "com.github.javafaker:javafaker:$fakerVersion",
+
+            // https://mvnrepository.com/artifact/androidx.fragment/fragment-testing
+            fragmentTesting        : "androidx.fragment:fragment-testing:1.1.0-alpha05"
+    ]
+}

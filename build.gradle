@@ -1,0 +1,25 @@
+buildscript {
+    apply from: "$project.rootDir/scripts/dependencies.gradle"
+
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath gradlePluginDeps.build
+        classpath gradlePluginDeps.kotlin
+        classpath gradlePluginDeps.realm
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
