@@ -25,7 +25,6 @@ class SplashActivity : AppCompatActivity(), KodeinAware {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-
         if (viewModel.isLoggedIn().blockingGet()) {
             returnOkResult(true)
         } else {
