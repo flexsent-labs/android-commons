@@ -19,7 +19,7 @@ class LoadingDialog : DialogFragment() {
 
     private fun createDialog(): Dialog {
         val dialog = Dialog(requireContext())
-        dialog.setContentView(R.layout.dialog_loading)
+        dialog.setContentView(R.layout.loading)
         dialog.setCancelable(false)
         dialog.setCanceledOnTouchOutside(false)
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))

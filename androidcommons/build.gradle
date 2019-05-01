@@ -40,6 +40,7 @@ dependencies {
     implementation otherDeps.appcompat
     implementation otherDeps.materialDesign
     implementation otherDeps.timber
+    implementation otherDeps.constraintLayout
 
     implementation kodeinDeps.generic
     implementation kodeinDeps.androidx
