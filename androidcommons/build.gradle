@@ -49,5 +49,4 @@ dependencies {
     implementation uberDeps.autodispose
     implementation uberDeps.autodisposeAndroid
     implementation uberDeps.autodisposeAndroidArchcomponents
-
 }

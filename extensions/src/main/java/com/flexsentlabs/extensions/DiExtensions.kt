@@ -29,9 +29,9 @@ import org.kodein.di.generic.instance
 inline fun <reified TViewModel, TFragment> TFragment.viewModel(
     tag: String? = null
 ): Lazy<TViewModel>
-    where TViewModel : ViewModel,
-          TFragment : KodeinAware,
-          TFragment : Fragment {
+        where TViewModel : ViewModel,
+              TFragment : KodeinAware,
+              TFragment : Fragment {
 
     return lazy {
         ViewModelProviders
@@ -63,9 +63,9 @@ inline fun <reified TViewModel, TFragment> TFragment.viewModel(
 inline fun <reified TViewModel, TActivity> TActivity.viewModel(
     tag: String? = null
 ): Lazy<TViewModel>
-    where TViewModel : ViewModel,
-          TActivity : KodeinAware,
-          TActivity : FragmentActivity {
+        where TViewModel : ViewModel,
+              TActivity : KodeinAware,
+              TActivity : FragmentActivity {
 
     return lazy {
         ViewModelProviders
@@ -97,9 +97,9 @@ inline fun <reified TViewModel, TActivity> TActivity.viewModel(
 inline fun <reified TViewModel, TFragment> TFragment.sharedViewModel(
     tag: String? = null
 ): Lazy<TViewModel>
-    where TViewModel : ViewModel,
-          TFragment : KodeinAware,
-          TFragment : Fragment {
+        where TViewModel : ViewModel,
+              TFragment : KodeinAware,
+              TFragment : Fragment {
 
     return lazy {
         ViewModelProviders
@@ -138,9 +138,9 @@ inline fun <reified TViewModel, reified TArgument, TFragment> TFragment.viewMode
     tag: String? = null,
     crossinline argFactory: () -> TArgument
 ): Lazy<TViewModel>
-    where TViewModel : ViewModel,
-          TFragment : KodeinAware,
-          TFragment : Fragment {
+        where TViewModel : ViewModel,
+              TFragment : KodeinAware,
+              TFragment : Fragment {
 
     return lazy {
         ViewModelProviders
@@ -179,9 +179,9 @@ inline fun <reified TViewModel, reified TArgument, TActivity> TActivity.viewMode
     tag: String? = null,
     crossinline argFactory: () -> TArgument
 ): Lazy<TViewModel>
-    where TViewModel : ViewModel,
-          TActivity : KodeinAware,
-          TActivity : FragmentActivity {
+        where TViewModel : ViewModel,
+              TActivity : KodeinAware,
+              TActivity : FragmentActivity {
     return lazy {
         ViewModelProviders
             .of(this, object : ViewModelProvider.Factory {
@@ -219,9 +219,9 @@ inline fun <reified TViewModel, reified TArgument, TFragment> TFragment.sharedVi
     tag: String? = null,
     crossinline argFactory: () -> TArgument
 ): Lazy<TViewModel>
-    where TViewModel : ViewModel,
-          TFragment : KodeinAware,
-          TFragment : Fragment {
+        where TViewModel : ViewModel,
+              TFragment : KodeinAware,
+              TFragment : Fragment {
 
     return lazy {
         ViewModelProviders
