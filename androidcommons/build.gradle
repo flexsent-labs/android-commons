@@ -31,14 +31,6 @@ android {
     }
 }
 
-sourceSets {
-    main {
-        resources {
-            srcDirs "scripts"
-        }
-    }
-}
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 

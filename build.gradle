@@ -1,5 +1,5 @@
 buildscript {
-    apply from: "$project.rootDir/androidcommons/scripts/dependencies.gradle"
+    apply from: "$project.rootDir/androidcommons/src/main/resources/scripts/dependencies.gradle"
 
     repositories {
         google()

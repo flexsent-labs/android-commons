@@ -192,7 +192,6 @@ ext {
             realm  : 'com.uphyca:stetho_realm:2.3.0'
     ]
 
-
     okHttpDeps = [
             // https://github.com/square/okhttp
             okHttp                   : "com.squareup.okhttp:okhttp:$okHttpVersion",
