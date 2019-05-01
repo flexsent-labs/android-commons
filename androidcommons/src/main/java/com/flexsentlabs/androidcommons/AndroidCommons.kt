@@ -12,7 +12,7 @@ object AndroidCommons {
     fun initialize(
         splashViewModel: SplashViewModel
     ) {
-        module = Kodein.Module("") {
+        module = Kodein.Module(AndroidCommons::class.java.name) {
             bind<SplashViewModel>() with provider {
                 splashViewModel
             }
