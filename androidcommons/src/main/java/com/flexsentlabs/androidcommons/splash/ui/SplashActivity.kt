@@ -1,7 +1,5 @@
 package com.flexsentlabs.androidcommons.splash.ui
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.flexsentlabs.androidcommons.R
@@ -26,7 +24,7 @@ class SplashActivity : AppCompatActivity(), KodeinAware {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.splash)
         if (viewModel.isLoggedIn().blockingGet()) {
-            returnOkResult(true)
+            viewModel.onLoggedIn(this, true)
         } else {
             autoLogin()
         }
@@ -44,23 +42,12 @@ class SplashActivity : AppCompatActivity(), KodeinAware {
             .subscribe(
                 {
                     Timber.d("auto logged in successfully")
-                    returnOkResult(true)
+                    viewModel.onLoggedIn(this, true)
                 },
                 {
                     Timber.e(it)
-                    returnOkResult(false)
+                    viewModel.onLoggedIn(this, false)
                 }
             )
-    }
-
-    private fun returnOkResult(isAutoLoggedIn: Boolean) {
-        val data = Intent()
-        data.putExtra(EXTRA_IS_AUTO_LOGGED_IN, isAutoLoggedIn)
-        setResult(Activity.RESULT_OK, data)
-        finish()
-    }
-
-    companion object {
-        const val EXTRA_IS_AUTO_LOGGED_IN = "EXTRA_IS_AUTO_LOGGED_IN"
     }
 }
