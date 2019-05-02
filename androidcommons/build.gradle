@@ -43,6 +43,9 @@ dependencies {
     implementation kodeinDeps.androidx
     implementation kodeinDeps.confJvm
 
+    implementation archDeps.paging
+    implementation archDeps.pagingRx
+
     implementation rxDeps.core
     implementation rxDeps.android
     implementation rxDeps.preferences
