@@ -1,10 +1,4 @@
 <resources>
     <string name="app_name">Android Commons</string>
-    <string name="login">Войти</string>
-    <string name="email">Email</string>
-    <string name="password">Пароль</string>
-    <string name="no_account">Нет аккаунта?</string>
-    <string name="register">Зарегестрироваться</string>
-    <string name="forgot_password">Забыли пароль?</string>
-    <string name="get_new_password">Получить новый пароль</string>
+
 </resources>
