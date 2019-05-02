@@ -1,8 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-platform-android'
-apply plugin: 'kotlin-kapt'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group='com.github.flexsent-labs'
@@ -40,10 +37,14 @@ dependencies {
     implementation otherDeps.appcompat
     implementation otherDeps.materialDesign
     implementation otherDeps.timber
+    implementation otherDeps.constraintLayout
 
     implementation kodeinDeps.generic
     implementation kodeinDeps.androidx
     implementation kodeinDeps.confJvm
+
+    implementation archDeps.paging
+    implementation archDeps.pagingRx
 
     implementation rxDeps.core
     implementation rxDeps.android
