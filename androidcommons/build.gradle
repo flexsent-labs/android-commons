@@ -34,10 +34,8 @@ dependencies {
     implementation project(':extensions')
 
     implementation otherDeps.kotlin
-    implementation otherDeps.appcompat
     implementation otherDeps.materialDesign
     implementation otherDeps.timber
-    implementation otherDeps.constraintLayout
 
     implementation archDeps.paging
     implementation archDeps.pagingRx
@@ -45,8 +43,4 @@ dependencies {
     implementation rxDeps.core
     implementation rxDeps.android
     implementation rxDeps.preferences
-
-    implementation uberDeps.autodispose
-    implementation uberDeps.autodisposeAndroid
-    implementation uberDeps.autodisposeAndroidArchcomponents
 }
