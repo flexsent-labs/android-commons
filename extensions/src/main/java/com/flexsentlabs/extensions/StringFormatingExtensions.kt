@@ -11,7 +11,7 @@ fun BigDecimal.toTwoDigitAfterPointString(): String {
     otherSymbols.decimalSeparator = '.'
 
     val numberFormat = DecimalFormat("0.00", otherSymbols)
-    numberFormat.isGroupingUsed = true
+    numberFormat.isGroupingUsed = false
     numberFormat.maximumFractionDigits = 2
     numberFormat.minimumFractionDigits = 2
 
