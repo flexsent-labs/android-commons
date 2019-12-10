@@ -232,3 +232,38 @@ inline fun <reified TViewModel, reified TArgument, TFragment> TFragment.sharedVi
             .get(TViewModel::class.java)
     }
 }
+
+/**
+ * Example usage:
+ *
+ * Define your view models initialization argument as any Fragment argument type class, i.e. Parcelable
+ *
+ *  * ```kotlin
+ *     @Parcelize
+ *     class Post: Parcelable {
+ *        var title:String? = null
+ *     }
+ * ```
+ *
+ * ```kotlin
+ *     class SomeFragment: Fragment() {
+ *         val post: Post by arg("ARG_POST)
+ *     }
+ * ```
+ * Getting by lambda allows lazy initialization so it is possible to use i.e. fragment arguments or activity extras.
+ *
+ */
+inline fun <reified TArg, TFragment> TFragment.arg(
+    argName: String
+): Lazy<TArg>
+        where TFragment : KodeinAware,
+              TFragment : Fragment {
+    return lazy {
+        val argument = arguments?.get(argName)
+        if (argument != null) {
+            return@lazy argument as TArg
+        } else {
+            throw IllegalArgumentException("Could not get argument $argName")
+        }
+    }
+}
