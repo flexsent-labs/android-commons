@@ -256,8 +256,7 @@ inline fun <reified TViewModel, reified TArgument, TFragment> TFragment.sharedVi
 inline fun <reified TArg, TFragment> TFragment.arg(
     argName: String
 ): Lazy<TArg>
-        where TFragment : KodeinAware,
-              TFragment : Fragment {
+        where TFragment : Fragment {
     return lazy {
         val argument = arguments?.get(argName)
         if (argument != null) {
